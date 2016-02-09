@@ -16,9 +16,9 @@ We recommend using [virtualenv](http://virtualenv.readthedocs.org/en/latest/virt
 Once you have virtualenvwrapper set up,
 
 ```bash
-mkvirtualenv chi-councilmatic
-git clone https://github.com/datamade/chi-councilmatic.git
-cd chi-councilmatic
+mkvirtualenv mia-councilmatic
+git clone https://github.com/Code-for-Miami/miami-dade-councilmatic.git
+cd mia-councilmatic
 pip install -r requirements.txt
 ```
 
