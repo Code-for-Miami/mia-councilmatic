@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Code-for-Miami/miami-dade-councilmatic.png?label=ready&title=Ready)](https://waffle.io/Code-for-Miami/miami-dade-councilmatic)
 # Miami Councilmatic
 
 Keep track of what Miami-Dade County Council is doing.
