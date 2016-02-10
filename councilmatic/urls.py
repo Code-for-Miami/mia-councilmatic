@@ -30,7 +30,7 @@ sqs = SearchQuerySet().facet('bill_type')\
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^search/', CouncilmaticFacetedSearchView(searchqueryset=sqs, 
+    url(r'^search/', CouncilmaticFacetedSearchView(searchqueryset=sqs,
                                        form_class=CouncilmaticSearchForm)),
     url(r'^$', ChicagoIndexView.as_view(), name='index'),
     url(r'^about/$', ChicagoAboutView.as_view(), name='about'),

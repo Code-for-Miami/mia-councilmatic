@@ -5,18 +5,18 @@
 ###############################
 
 OCD_CITY_COUNCIL_ID = 'ocd-organization/ef168607-9135-4177-ad8e-c1f7a4806c3a'
-CITY_COUNCIL_NAME = 'Chicago City Council'
+CITY_COUNCIL_NAME = 'Miami-Dade County Council'
 OCD_JURISDICTION_ID = 'ocd-jurisdiction/country:us/state:il/place:chicago/government'
 LEGISLATIVE_SESSIONS = ['2007', '2011', '2015'] # the last one in this list should be the current legislative session
-CITY_NAME = 'Chicago'
-CITY_NAME_SHORT = 'Chicago'
+CITY_NAME = 'Miami-Dade'
+CITY_NAME_SHORT = 'Miami'
 
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
 CITY_VOCAB = {
-    'MUNICIPAL_DISTRICT': 'Ward',       # e.g. 'District'
-    'SOURCE': 'Chicago City Clerk',
-    'COUNCIL_MEMBER': 'Alderman',       # e.g. 'Council Member'
-    'COUNCIL_MEMBERS': 'Aldermen',      # e.g. 'Council Members'
+    'MUNICIPAL_DISTRICT': 'District',       # e.g. 'District'
+    'SOURCE': 'County Clerk',
+    'COUNCIL_MEMBER': 'Commissioner',       # e.g. 'Council Member'
+    'COUNCIL_MEMBERS': 'Commissioners',      # e.g. 'Council Members'
     'EVENTS': 'Meetings',               # label for the events listing, e.g. 'Events'
 }
 
@@ -40,7 +40,7 @@ SITE_META = {
 LEGISTAR_URL = 'https://chicago.legistar.com/Legislation.aspx'
 
 
-# this is for the boundaries of municipal districts, to add 
+# this is for the boundaries of municipal districts, to add
 # shapes to posts & ultimately display a map with the council
 # member listing. the boundary set should be the relevant
 # slug from the ocd api's boundary service
@@ -201,8 +201,8 @@ ABOUT_BLURBS = {
                     <p>Most of the time, meaningful legislative debate happens in committee meetings, which occur several times a month.</p>\
                     <p>Meetings of the entire City Council generally occur once a month at City Hall.</p>\
                     <p>All City Council meetings are open to public participation.</p>",
-    "COUNCIL_MEMBERS": "" 
-    
+    "COUNCIL_MEMBERS": ""
+
 }
 
 MANUAL_HEADSHOTS = {
@@ -385,4 +385,3 @@ TOPIC_HIERARCHY = [
         ],
     }
 ]
-
