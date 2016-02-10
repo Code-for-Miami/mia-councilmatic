@@ -9,15 +9,15 @@ CITY_COUNCIL_NAME = 'Miami-Dade County Council'
 OCD_JURISDICTION_ID = 'ocd-jurisdiction/country:us/state:fl/county:miami-dade/legislature'
 LEGISLATIVE_SESSIONS = ['2014'] # the last one in this list should be the current legislative session
 CITY_NAME = 'Miami-Dade'
-CITY_NAME_SHORT = 'Miami'
+CITY_NAME_SHORT = 'Miami-Dade'
 CITY_COUNCIL_MEETING_NAME = 'Miami-Dade County Board of County Commissioners'
 
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
 CITY_VOCAB = {
     'MUNICIPAL_DISTRICT': 'District',       # e.g. 'District'
-    'SOURCE': 'Miami City Clerk',
+    'SOURCE': 'Miami-Dade County Clerk',
     'COUNCIL_MEMBER': 'Commisioner',       # e.g. 'Council Member'
-    'COUNCIL_MEMBERS': 'Commisioner',      # e.g. 'Council Members'
+    'COUNCIL_MEMBERS': 'Commisioners',      # e.g. 'Council Members'
     'EVENTS': 'Meetings',               # label for the events listing, e.g. 'Events'
 }
 
@@ -30,15 +30,15 @@ APP_NAME = 'chicago'
 
 # this is for populating meta tags
 SITE_META = {
-    'site_name' : 'Miami Councilmatic',
-    'site_desc' : 'City Council, demystified. Keep tabs on Miami legislation, commisioners, & meetings.',
+    'site_name' : 'Miami-Dade Councilmatic',
+    'site_desc' : 'Miami-Dade\'s Council, demystified. Keep tabs on Miami-Dade County legislation, commisioners, and meetings.',
     'site_author' : 'DataMade',
-    'site_url' : 'https://miami.councilmatic.org',
+    'site_url' : 'https://miamidade.councilmatic.org',
     'twitter_site': '@DataMadeCo',
     'twitter_creator': '@DataMadeCo',
 }
 
-LEGISTAR_URL = 'https://miami.legistar.com/Legislation.aspx'
+LEGISTAR_URL = 'http://www.miamidade.gov/commission/search-legislation.asp'
 
 
 # this is for the boundaries of municipal districts, to add 
@@ -50,12 +50,7 @@ BOUNDARY_SET = 'chicago-wards-2015'
 
 # this is for configuring a map of council districts using data from the posts
 # set MAP_CONFIG = None to hide map
-MAP_CONFIG = {
-    'center': [41.8369, -87.6847],
-    'zoom': 10,
-    'color': "#54afe8",
-    'highlight_color': "#C00000",
-}
+MAP_CONFIG = None
 
 
 FOOTER_CREDITS = [
