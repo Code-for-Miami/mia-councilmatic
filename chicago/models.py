@@ -131,6 +131,6 @@ class ChicagoEvent(Event):
     def most_recent_past_city_council_meeting(cls):
         if hasattr(settings, 'CITY_COUNCIL_MEETING_NAME'):
             return cls.objects.filter(name__icontains=settings.CITY_COUNCIL_MEETING_NAME)\
-                  .filter(start_time__lt=datetime.now()).filter(description='').order_by('-start_time').first()
+                  .filter(start_time__lt=datetime.now()).order_by('-start_time').first()
         else:
             return None

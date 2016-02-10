@@ -4,19 +4,20 @@
 # These settings are required #
 ###############################
 
-OCD_CITY_COUNCIL_ID = 'ocd-organization/ef168607-9135-4177-ad8e-c1f7a4806c3a'
-CITY_COUNCIL_NAME = 'Chicago City Council'
-OCD_JURISDICTION_ID = 'ocd-jurisdiction/country:us/state:il/place:chicago/government'
-LEGISLATIVE_SESSIONS = ['2007', '2011', '2015'] # the last one in this list should be the current legislative session
-CITY_NAME = 'Chicago'
-CITY_NAME_SHORT = 'Chicago'
+OCD_CITY_COUNCIL_ID = 'ocd-organization/4d011b3b-4906-47ac-9947-05f3422e83d0'
+CITY_COUNCIL_NAME = 'Miami-Dade County Council'
+OCD_JURISDICTION_ID = 'ocd-jurisdiction/country:us/state:fl/county:miami-dade/legislature'
+LEGISLATIVE_SESSIONS = ['2014'] # the last one in this list should be the current legislative session
+CITY_NAME = 'Miami-Dade'
+CITY_NAME_SHORT = 'Miami'
+CITY_COUNCIL_MEETING_NAME = 'Miami-Dade County Board of County Commissioners'
 
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
 CITY_VOCAB = {
-    'MUNICIPAL_DISTRICT': 'Ward',       # e.g. 'District'
-    'SOURCE': 'Chicago City Clerk',
-    'COUNCIL_MEMBER': 'Alderman',       # e.g. 'Council Member'
-    'COUNCIL_MEMBERS': 'Aldermen',      # e.g. 'Council Members'
+    'MUNICIPAL_DISTRICT': 'District',       # e.g. 'District'
+    'SOURCE': 'Miami City Clerk',
+    'COUNCIL_MEMBER': 'Commisioner',       # e.g. 'Council Member'
+    'COUNCIL_MEMBERS': 'Commisioner',      # e.g. 'Council Members'
     'EVENTS': 'Meetings',               # label for the events listing, e.g. 'Events'
 }
 
@@ -29,15 +30,15 @@ APP_NAME = 'chicago'
 
 # this is for populating meta tags
 SITE_META = {
-    'site_name' : 'Chicago Councilmatic',
-    'site_desc' : 'City Council, demystified. Keep tabs on Chicago legislation, aldermen, & meetings.',
+    'site_name' : 'Miami Councilmatic',
+    'site_desc' : 'City Council, demystified. Keep tabs on Miami legislation, commisioners, & meetings.',
     'site_author' : 'DataMade',
-    'site_url' : 'https://chicago.councilmatic.org',
+    'site_url' : 'https://miami.councilmatic.org',
     'twitter_site': '@DataMadeCo',
     'twitter_creator': '@DataMadeCo',
 }
 
-LEGISTAR_URL = 'https://chicago.legistar.com/Legislation.aspx'
+LEGISTAR_URL = 'https://miami.legistar.com/Legislation.aspx'
 
 
 # this is for the boundaries of municipal districts, to add 
@@ -89,7 +90,7 @@ IMAGES = {
 
 # this is the name of the meetings where the entire city council meets
 # as stored in legistar
-CITY_COUNCIL_MEETING_NAME = 'City Council'
+CITY_COUNCIL_MEETING_NAME = 'Miami-Dade County Board of County Commissioners'
 
 # this is the name of the role of committee chairs, e.g. 'CHAIRPERSON' or 'Chair'
 # as stored in legistar
@@ -99,8 +100,6 @@ COMMITTEE_CHAIR_TITLE = 'Chairman'
 # this is the anme of the role of committee members,
 # as stored in legistar
 COMMITTEE_MEMBER_TITLE = 'Member'
-
-
 
 
 # this is for convenience, & used to populate a table
