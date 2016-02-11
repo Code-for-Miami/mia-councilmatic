@@ -6,10 +6,6 @@ a {
 	color: #01A2A6;
 }
 
-i {
-	color:#2F2933;
-}
-
 .btn-primary {
 	background-color: #01A2A6;
 	border-color: #01A2A6;
@@ -148,7 +144,12 @@ i {
 	font-family: 'Raleway', sans-serif;
 	color: #fff;
 }
-
+#main-search{
+	height:55px
+}
+#fa-search {
+	color:#2F2933;
+}
 #section-intro, #section-engage{
     line-height: 1.6em;
 }
