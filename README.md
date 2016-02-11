@@ -1,5 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/Code-for-Miami/miami-dade-councilmatic.png?label=ready&title=Ready)](https://waffle.io/Code-for-Miami/miami-dade-councilmatic)
-# Miami Councilmatic
+# Miami-Dade Councilmatic
 
 Keep track of what Miami-Dade County Council is doing.
 
@@ -7,7 +7,7 @@ Keep track of what Miami-Dade County Council is doing.
 
 **Install OS level dependencies:** 
 
-* Python 3.4
+* Python 3.4 - Heads up: many OSX machines will use Python 2.x by default.  
 * PostgreSQL 9.4 +
 
 **Install app requirements**
@@ -18,22 +18,23 @@ Once you have virtualenvwrapper set up,
 
 ```bash
 mkvirtualenv mia-councilmatic
+workon mia-councilmatic
 git clone https://github.com/Code-for-Miami/miami-dade-councilmatic.git
-cd mia-councilmatic
+cd miami-dade-councilmatic
 pip install -r requirements.txt
 ```
 
-Afterwards, whenever you want to use this virtual environment to work on chi-councilmatic, run `workon chi-councilmatic`
+Afterwards, whenever you want to use this virtual environment to work on mia-councilmatic, run `workon mia-councilmatic`. To exit the virtual environment, run `deactivate`.
 
 **OPTIONAL: install django-councilmatic locally**  
-If you plan on making changes to core councilmatic features (as opposed to Chicago-specific stuff), you'll want to install django-councilmatic locally instead of installing from pypi.
+If you plan on making changes to core councilmatic features (as opposed to Miami-specific stuff), you'll want to install django-councilmatic locally instead of installing from pypi.
 
 ```bash
 cd ..
 git clone https://github.com/datamade/django-councilmatic.git
 cd django-councilmatic
 python setup.py develop
-cd ../chi-councilmatic
+cd ../miami-dade-councilmatic/
 ```
 
 **Create your settings file**
@@ -48,10 +49,10 @@ Then edit `councilmatic/settings_deployment.py`:
 
 **Setup your database**
 
-Before we can run the website, we need to create a database.
+Before we can run the website, we need to create a database. If you're setting up a development environment on your personal OSX computer, use an app such as Postgres.app, making sure the app is running.
 
 ```bash
-createdb chi_councilmatic
+createdb mia_councilmatic
 ```
 
 Then, run migrations
@@ -68,7 +69,7 @@ python manage.py createsuperuser
 
 ## Importing data from the open civic data api
 
-Run the loaddata management command. This will take a while, depending on volume (Chicago has ~70k bills, & it takes ~1 hour to load the data).
+Run the loaddata management command. This will take a while, depending on volume (Some cities have ~70k bills, & taking ~1 hour to load the data).
 
 ```bash
 python manage.py loaddata
