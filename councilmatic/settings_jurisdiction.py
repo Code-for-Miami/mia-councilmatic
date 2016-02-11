@@ -18,7 +18,7 @@ CITY_VOCAB = {
     'MUNICIPAL_DISTRICT': 'District',       # e.g. 'District'
     'SOURCE': 'Miami City Clerk',
     'COUNCIL_MEMBER': 'Commissioner',       # e.g. 'Council Member'
-    'COUNCIL_MEMBERS': 'Commisioners',      # e.g. 'Council Members'
+    'COUNCIL_MEMBERS': 'Commissioners',      # e.g. 'Council Members'
     'EVENTS': 'Meetings',               # label for the events listing, e.g. 'Events'
 }
 
