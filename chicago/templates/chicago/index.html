@@ -104,7 +104,7 @@
 
                         <p>
                             <a class='btn btn-primary' href='/search/?q=&selected_facets=topics_exact:City Matters'>
-                                View citywide legislation <i class="fa fa-fw fa-chevron-right"></i>
+                                View countywide legislation <i class="fa fa-fw fa-chevron-right"></i>
                             </a>
                         </p>
                         <br/>
@@ -115,7 +115,7 @@
 
                         <p>
                             <a class='btn btn-primary' href='/council-members/'>
-                                Find your alderman <i class="fa fa-fw fa-chevron-right"></i>
+                                Find your {{CITY_VOCAB.COUNCIL_MEMBERS}} <i class="fa fa-fw fa-chevron-right"></i>
                             </a>
                         </p>
                         <br/>
@@ -144,13 +144,13 @@
 
                     {% if next_council_meeting %}
 
-                    <h4><i class="fa fa-fw fa-institution"></i> Next City Council meeting</h4>
+                    <h4><i class="fa fa-fw fa-institution"></i> Next County Council meeting</h4>
 
                     <p class="small text-muted">
                         <i class="fa fa-fw fa-calendar-o"></i> {{next_council_meeting.start_time | date:"D n/d/Y"}}<br/>
                         <i class="fa fa-fw fa-clock-o"></i> {{next_council_meeting.start_time| date:"g:ia"}}<br/>
-                        <i class="fa fa-fw fa-map-marker"></i> Council Chambers, City Hall<br />
-                        <i class="fa fa-fw"></i> 121 N LaSalle St, Chicago, IL
+                        <i class="fa fa-fw fa-map-marker"></i> 2nd Floor Commission Chambers<br />
+                        <i class="fa fa-fw"></i> 111 NW 1st St, Miami, FL
                     </p>
                     <a class='btn btn-info btn-sm' href="{{next_council_meeting.event_page_url}}/">
                         Details

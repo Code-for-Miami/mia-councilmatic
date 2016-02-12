@@ -5,37 +5,45 @@
 a {
 	color: #01A2A6;
 }
-
+a:hover{
+		color: #29D9C2;
+}
 .btn-primary {
 	background-color: #01A2A6;
 	border-color: #01A2A6;
 }
+
+.btn-primary:hover {
+	background-color: #29D9C2;
+	border-color: #29D9C2;
+}
+
 .btn-info {
-	background-color: #DBEEFA;
-	border-color: #DBEEFA;
+	background-color: #BDF271;
+	border-color: #BDF271;
 	color: #333;
 }
 .btn-info:hover, .btn-info:active {
-    background-color: #DBEEFA;
-    border-color: #DBEEFA;
-	color: #1c87ca;
+    background-color: #FFFFA6;
+    border-color: #FFFFA6;
+		color: #2F2933;
 }
 .btn-bill-detail{
     padding: 16px 0px;
     top: 12px;
 }
 .btn-bill-detail:hover, .btn-bill-detail:active{
-	background-color: #54afe8; /* medium blue */
-	color: #fff;
+	background-color: #29D9C2; /* birght teal */
+
 }
 
 
 .nav-pills > li > a {
-	color: #1c87ca; /* dark blue */
+	color: #29D9C2; /* dark teal */
 }
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li > a:hover {
     background: none;
-    color: #1c87ca; /* dark blue */
+    color: #29D9C2; /* bright teal */
     border-bottom: 8px solid #1c87ca; /* dark blue */
 
 }
@@ -51,7 +59,7 @@ a {
     color: #777;
 }
 .badge-muted {
-	background-color: #DBEEFA;
+	background-color: #2F2933;
 	color: #333;
 }
 
@@ -115,13 +123,17 @@ a {
     max-height: 250px;
 }
 #logo-text{
+    text-transform: capitalize;
 		font-family: 'Raleway', sans-serif;
+		font-size: 20px;
+		color: #2F2933;
 
 }
 #nav-items{
 	font-family: 'Raleway', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
+	color: #2F2933;
 }
 
 /* homepage */
@@ -154,21 +166,25 @@ a {
     line-height: 1.6em;
 }
 #intro-pg{
-	padding-top: 30px;
+	padding-top: 10px;
 }
 #map-screenshot{
     max-height: 220px;
 }
 
 #section-engage{
-    background-color: #DBEEFA;
+    background-color: #E9FAD0;
 		padding-top: 10px;
+}
+#section-engage h2, #section-engage h4{
+		font-family: 'Raleway', sans-serif;
+		color: #2F2933;
 }
 #section-events{
     background-image:
         linear-gradient(
-            rgba(80, 0, 0, 0.4),
-            rgba(80, 0, 0, 0.4)
+            rgba(1, 162, 166, 0.7),
+            rgba(1, 162, 166, 0.7)
         ),
         url('../images/council_meeting.jpg');
     background-size: cover;
@@ -177,15 +193,20 @@ a {
 
 }
 #section-events h2{
-    color: #fff;
+		font-family: 'Raleway', sans-serif;
+    color: #ffffff;
 }
 #section-events h4, #section-events h3, #section-events p{
-    color: #ddd;
+		font-family: 'Raleway', sans-serif;
+    color: #ffffff;
 }
 #section-events p>a{
-    color: #DBEEFA;
+    color: #ffffff;
 }
-
+#section-last-council-meeting h2{
+	font-family: 'Raleway', sans-serif;
+	color: #2F2933;
+}
 #next-council-meeting-well{
     background-image:
         linear-gradient(
