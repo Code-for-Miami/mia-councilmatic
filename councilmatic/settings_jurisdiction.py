@@ -5,12 +5,12 @@
 ###############################
 
 OCD_CITY_COUNCIL_ID = 'ocd-organization/4d011b3b-4906-47ac-9947-05f3422e83d0'
-CITY_COUNCIL_NAME = 'Miami-Dade County Council'
+CITY_COUNCIL_NAME = 'Miami-Dade Board of County Commissioners'
 OCD_JURISDICTION_ID = 'ocd-jurisdiction/country:us/state:fl/county:miami-dade/legislature'
-LEGISLATIVE_SESSIONS = ['2014'] # the last one in this list should be the current legislative session
+LEGISLATIVE_SESSIONS = ['2016'] # the last one in this list should be the current legislative session
 CITY_NAME = 'Miami-Dade'
 CITY_NAME_SHORT = 'Miami-Dade'
-CITY_COUNCIL_MEETING_NAME = 'Miami-Dade County Board of County Commissioners'
+CITY_COUNCIL_MEETING_NAME = 'Miami-Dade Board of County Commissioners'
 
 
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
@@ -91,7 +91,7 @@ CITY_COUNCIL_MEETING_NAME = 'Miami-Dade County Board of County Commissioners'
 # this is the name of the role of committee chairs, e.g. 'CHAIRPERSON' or 'Chair'
 # as stored in legistar
 # if this is set, committees will display chairs
-COMMITTEE_CHAIR_TITLE = 'Chairman'
+COMMITTEE_CHAIR_TITLE = 'Chairperson'
 
 # this is the anme of the role of committee members,
 # as stored in legistar

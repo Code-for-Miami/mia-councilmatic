@@ -17,10 +17,12 @@ We recommend using [virtualenv](http://virtualenv.readthedocs.org/en/latest/virt
 Once you have virtualenvwrapper set up,
 
 ```bash
-mkvirtualenv mia-councilmatic
+brew install python3
+which python3
+mkvirtualenv --python=/usr/local/bin/python3 mia-councilmatic
 workon mia-councilmatic
-git clone https://github.com/Code-for-Miami/miami-dade-councilmatic.git
-cd miami-dade-councilmatic
+git clone https://github.com/Code-for-Miami/mia-councilmatic.git
+cd mia-councilmatic
 pip install -r requirements.txt
 ```
 
@@ -34,7 +36,7 @@ cd ..
 git clone https://github.com/datamade/django-councilmatic.git
 cd django-councilmatic
 python setup.py develop
-cd ../miami-dade-councilmatic/
+cd ../mia-councilmatic/
 ```
 
 **Create your settings file**
