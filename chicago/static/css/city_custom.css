@@ -125,6 +125,7 @@ a:hover{
 #logo-text{
     text-transform: capitalize;
 		font-family: 'Raleway', sans-serif;
+		font-weight: 500;
 		font-size: 20px;
 		color: #2F2933;
 
@@ -154,6 +155,7 @@ a:hover{
 }
 #section-photo .h3, #section-photo h1{
 	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
 	color: #fff;
 }
 #main-search{
@@ -178,6 +180,7 @@ a:hover{
 }
 #section-engage h2, #section-engage h4{
 		font-family: 'Raleway', sans-serif;
+		font-weight: 600;
 		color: #2F2933;
 }
 #section-events{
@@ -194,10 +197,12 @@ a:hover{
 }
 #section-events h2{
 		font-family: 'Raleway', sans-serif;
+		font-weight: 500;
     color: #ffffff;
 }
 #section-events h4, #section-events h3, #section-events p{
 		font-family: 'Raleway', sans-serif;
+		font-weight: 500;
     color: #ffffff;
 }
 #section-events p>a{
@@ -205,6 +210,7 @@ a:hover{
 }
 #section-last-council-meeting h2{
 	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
 	color: #2F2933;
 }
 #next-council-meeting-well{
