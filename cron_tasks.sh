@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd /home/datamade/chi-councilmatic 
-/home/datamade/.virtualenvs/chi-councilmatic/bin/python manage.py loaddata >> /tmp/chicago-loaddata.log 2>&1 
-/home/datamade/.virtualenvs/chi-councilmatic/bin/python manage.py fixdata >> /tmp/chicago-loaddata.log 2>&1 
-/home/datamade/.virtualenvs/chi-councilmatic/bin/python manage.py update_index --age=24
+cd /home/codeformiami/Dropbox/mia-councilmatic
+/home/codeformiami/Dropbox/mia-councilmatic/venv/lib/python3.4/python manage.py loaddata >> /tmp/chicago-loaddata.log 2>&1
+/home/codeformiami/Dropbox/mia-councilmatic/venv/lib/python3.4/python manage.py fixdata >> /tmp/chicago-loaddata.log 2>&1
+/home/codeformiami/Dropbox/mia-councilmatic/venv/lib/python3.4/python manage.py update_index --age=24
