@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from councilmatic_core.models import Action, Bill
 
 class Command(BaseCommand):
-    help = 'custom data fixes for Chicago'
+    help = 'custom data fixes for Miami-Dade'
 
     def handle(self, *args, **options):
 

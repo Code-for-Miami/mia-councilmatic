@@ -81,7 +81,7 @@ By default, the loaddata command is smart about what it looks at on the OCD API.
 
 The loaddata command has some more nuance than the description above, for the different types of data it loads. If you have any questions, open up an issue and pester us to write better documentation.
 
-## Running Chicago Councilmatic locally
+## Running Miami-Dade Councilmatic locally
 
 ``` bash
 python manage.py runserver

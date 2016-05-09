@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from datetime import date, timedelta
-from chicago.models import ChicagoBill, ChicagoEvent
+from miamidade.models import MiamiDadeBill, MiamiDadeEvent
 from councilmatic_core.models import Action
 from councilmatic_core.views import *
 from django.conf import settings
 
 
-class ChicagoIndexView(IndexView):
-    template_name = 'chicago/index.html'
-    bill_model = ChicagoBill
-    event_model = ChicagoEvent
+class MiamiDadeIndexView(IndexView):
+    template_name = 'miamidade/index.html'
+    bill_model = MiamiDadeBill
+    event_model = MiamiDadeEvent
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
@@ -32,12 +32,12 @@ class ChicagoIndexView(IndexView):
         # populating recent activitiy (since last council meeting)
         recent_activity = {}
 
-        new_bills = ChicagoBill.new_bills_since(date_cutoff)
+        new_bills = MiamiDadeBill.new_bills_since(date_cutoff)
         recent_activity['new'] = new_bills
         recent_activity['new_routine'] = [b for b in new_bills if 'Routine' in b.topics]
         recent_activity['new_nonroutine'] = [b for b in new_bills if 'Non-Routine' in b.topics]
         
-        updated_bills = ChicagoBill.updated_bills_since(date_cutoff)
+        updated_bills = MiamiDadeBill.updated_bills_since(date_cutoff)
         recent_activity['updated_routine'] = [b for b in updated_bills if 'Routine' in b.topics]
         recent_activity['updated_nonroutine'] = [b for b in updated_bills if 'Non-Routine' in b.topics]
 
@@ -75,17 +75,17 @@ class ChicagoIndexView(IndexView):
             'seo': seo,
         }
 
-class ChicagoAboutView(AboutView):
-    template_name = 'chicago/about.html'
+class MiamiDadeAboutView(AboutView):
+    template_name = 'miamidade/about.html'
 
-class ChicagoBillDetailView(BillDetailView):
-    model = ChicagoBill
+class MiamiDadeBillDetailView(BillDetailView):
+    model = MiamiDadeBill
 
     def get_object(self, queryset=None):
         """
         Returns a bill based on slug. If no bill found,
         looks for bills based on legistar id (so that
-        urls from old Chicago councilmatic don't break)
+        urls from old MiamiDade councilmatic don't break)
         """
 
         if queryset is None:
@@ -110,13 +110,13 @@ class ChicagoBillDetailView(BillDetailView):
 
         return obj
 
-class ChicagoCouncilMembersView(CouncilMembersView):
+class MiamiDadeCouncilMembersView(CouncilMembersView):
 
     def get_seo_blob(self):
         seo = {}
         seo.update(settings.SITE_META)
-        seo['site_desc'] = "Look up your local Alderman, and see what they're doing in your ward & your city"
+        seo['site_desc'] = "Look up your local councilmembers, and see what they're doing in Miami-Dade County"
         seo['image'] = '/static/images/chicago_map.jpg'
-        seo['title'] = 'Wards & Aldermen - Chicago Councilmatic'
+        seo['title'] = 'Councilmembers - Miami-Dade Councilmatic'
 
         return seo

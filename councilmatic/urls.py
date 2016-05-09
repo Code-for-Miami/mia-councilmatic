@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView
 from haystack.query import SearchQuerySet
 from councilmatic_core.views import CouncilmaticSearchForm, CouncilmaticFacetedSearchView
-from chicago.views import *
+from miamidade.views import *
 
 sqs = SearchQuerySet().facet('bill_type')\
                       .facet('sponsorships', sort='index')\
@@ -32,10 +32,10 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^search/', CouncilmaticFacetedSearchView(searchqueryset=sqs,
                                        form_class=CouncilmaticSearchForm)),
-    url(r'^$', ChicagoIndexView.as_view(), name='index'),
-    url(r'^about/$', ChicagoAboutView.as_view(), name='about'),
-    url(r'^legislation/(?P<slug>.*)/$', ChicagoBillDetailView.as_view(), name='bill_detail'),
-    url(r'^council-members/$', ChicagoCouncilMembersView.as_view(), name='council_members'),
+    url(r'^$', MiamiDadeIndexView.as_view(), name='index'),
+    url(r'^about/$', MiamiDadeAboutView.as_view(), name='about'),
+    url(r'^legislation/(?P<slug>.*)/$', MiamiDadeBillDetailView.as_view(), name='bill_detail'),
+    url(r'^council-members/$', MiamiDadeCouncilMembersView.as_view(), name='council_members'),
     url(r'', include('councilmatic_core.urls')),
     url(r'^members/$', RedirectView.as_view(url='/council-members/', permanent=True), name='council_members'),
 ]

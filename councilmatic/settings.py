@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'haystack',
     'councilmatic_core',
-    'chicago',
+    'miamidade',
 )
 
 MIDDLEWARE_CLASSES = (

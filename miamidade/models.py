@@ -9,7 +9,7 @@ from urllib.parse import quote
 
 app_timezone = pytz.timezone(settings.TIME_ZONE)
 
-class ChicagoBill(Bill):
+class MiamiDadeBill(Bill):
 
     class Meta:
         proxy = True
@@ -122,7 +122,7 @@ class ChicagoBill(Bill):
         else:
             return None
 
-class ChicagoEvent(Event):
+class MiamiDadeEvent(Event):
 
     class Meta:
         proxy = True
