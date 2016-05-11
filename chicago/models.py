@@ -3,7 +3,7 @@ from django.db import models
 from councilmatic_core.models import Bill, Event
 from datetime import datetime
 import pytz
-from .helpers import topic_classifier
+from .helpers import topic_classifier, subj_classifier
 import re
 from urllib.parse import quote
 
@@ -71,7 +71,8 @@ class ChicagoBill(Bill):
 
     @property
     def topics(self):
-        tags = topic_classifier(self.description)
+        # tags = topic_classifier(self.description)
+        tags = subj_classifier(self.subject)
         if 'Routine' in tags:
             tags.remove('Routine')
             tags = ['Routine'] + tags
