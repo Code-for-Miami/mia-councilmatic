@@ -1,3 +1,14 @@
+def subj_classifier(title) :
+    title = title.lower()
+
+    tags = []
+    if title == '':
+        return ['No Info']
+    else:
+        return ['Non-Routine', title]
+
+    return ['Unclassified']
+
 def topic_classifier(title) :
     title = title.lower()
 
@@ -10,8 +21,7 @@ def topic_classifier(title) :
     if title.startswith('senior citizen sewer') :
         return tags + ['Senior citizen sewer refund']
 
-    if title.startswith(('handicapped parking', 
-                         'handicapped permit')) :
+    if title.startswith(('handicapped parking', 'handicapped permit')) :
         return tags + ['Routine', 'Handicapped Parking Permit']
 
     if title.startswith(('condominium claim',
