@@ -16,7 +16,7 @@ CITY_COUNCIL_MEETING_NAME = 'Miami-Dade Board of County Commissioners'
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
 CITY_VOCAB = {
     'MUNICIPAL_DISTRICT': 'District',       # e.g. 'District'
-    'SOURCE': 'Miami City Clerk',
+    'SOURCE': 'Miami-Dade County Clerk',
     'COUNCIL_MEMBER': 'Commissioner',       # e.g. 'Council Member'
     'COUNCIL_MEMBERS': 'Commissioners',      # e.g. 'Council Members'
     'EVENTS': 'Meetings',               # label for the events listing, e.g. 'Events'
