@@ -26,7 +26,7 @@ cd mia-councilmatic
 pip install -r requirements.txt
 ```
 
-** For Linux systems**
+**For Linux systems**
 Install these packages:
 * python3.4
 * postgresql
