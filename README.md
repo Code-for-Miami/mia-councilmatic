@@ -19,7 +19,24 @@ Once you have virtualenvwrapper set up,
 ```bash
 brew install python3
 which python3
-mkvirtualenv --python=/usr/local/bin/python3 mia-councilmatic
+mkvirtualenv --python=/usr/local/bin/python3.4 mia-councilmatic
+workon mia-councilmatic
+git clone https://github.com/Code-for-Miami/mia-councilmatic.git
+cd mia-councilmatic
+pip install -r requirements.txt
+```
+
+** For Linux systems**
+Install these packages:
+* python3.4
+* postgresql
+* virtualenv
+* virtualenvwrapper
+* postgresql-server-dev-9.4 (or if you're running a version other than 9.4, choose that package)
+
+Then run:
+```bash
+mkvirtualenv --python=/usr/bin/python3.4 mia-councilmatic
 workon mia-councilmatic
 git clone https://github.com/Code-for-Miami/mia-councilmatic.git
 cd mia-councilmatic
@@ -50,12 +67,18 @@ Then edit `councilmatic/settings_deployment.py`:
 - `DATABASES['default']['NAME']` should be 'mia_councilmatic'
 - if you're setting up councilmatic for local development, use a dummy cache by setting `CACHES['default']['BACKEND']` to `'django.core.cache.backends.dummy.DummyCache'`. if you're deploying, leave it as is
 
+
 **Setup your database**
 
 Before we can run the website, we need to create a database. If you're setting up a development environment on your personal OSX computer, use an app such as Postgres.app, making sure the app is running.
 
 ```bash
 createdb mia_councilmatic
+```
+If you use Linux and get a `"Role does not exist"` error, run 
+
+```bash
+createdb mia_councilmatic -u YOUR_POSTGRESQL_USERNAME
 ```
 
 Then, run migrations
