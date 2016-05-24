@@ -46,7 +46,8 @@ cp councilmatic/settings_deployment.py.example councilmatic/settings_deployment.
 ```
 
 Then edit `councilmatic/settings_deployment.py`:
-- `DATABASES['default']['USER']` should be your username
+- `DATABASES['default']['USER']` should be your PostgreSQL username
+- `DATABASES['default']['NAME']` should be 'mia_councilmatic'
 - if you're setting up councilmatic for local development, use a dummy cache by setting `CACHES['default']['BACKEND']` to `'django.core.cache.backends.dummy.DummyCache'`. if you're deploying, leave it as is
 
 **Setup your database**
