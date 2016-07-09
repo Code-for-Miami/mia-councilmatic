@@ -12,6 +12,10 @@ CITY_NAME = 'Miami-Dade'
 CITY_NAME_SHORT = 'Miami-Dade'
 CITY_COUNCIL_MEETING_NAME = 'Miami-Dade Board of County Commissioners'
 
+# When running locally 
+# python -m SimpleHTTPServer 8001
+# in my ~/Sites/scrapers-us-municipal/_data/miamidade
+OCDAPI_BASE_URL = 'http://localhost:8001'
 
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
 CITY_VOCAB = {
@@ -22,7 +26,7 @@ CITY_VOCAB = {
     'EVENTS': 'Meetings',               # label for the events listing, e.g. 'Events'
 }
 
-APP_NAME = 'chicago'
+APP_NAME = 'miamidade'
 
 
 #########################

@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from datetime import date, timedelta
-from chicago.models import ChicagoBill, ChicagoEvent
+from miamidade.models import MiamiDadeBill, MiamiDadeEvent
 from councilmatic_core.models import Action
 from councilmatic_core.views import *
 from django.conf import settings
 
 
-class ChicagoIndexView(IndexView):
-    template_name = 'chicago/index.html'
-    bill_model = ChicagoBill
-    event_model = ChicagoEvent
+class MiamiDadeIndexView(IndexView):
+    template_name = 'miamidade/index.html'
+    bill_model = MiamiDadeBill
+    event_model = MiamiDadeEvent
 
     def get_context_data(self, **kwargs):
         context = super(IndexView, self).get_context_data(**kwargs)
@@ -23,26 +23,18 @@ class ChicagoIndexView(IndexView):
         meeting_activity['actions'] = Action.actions_on_date(date_cutoff.date())
         meeting_bills = list(set([a.bill for a in meeting_activity['actions']]))
         meeting_activity['bills'] = meeting_bills
-        meeting_activity['bills_routine'] = [b for b in meeting_bills if 'Routine' in b.topics]
-        meeting_activity['bills_nonroutine'] = [b for b in meeting_bills if 'Non-Routine' in b.topics]
         
-
-
-
         # populating recent activitiy (since last council meeting)
         recent_activity = {}
 
-        new_bills = ChicagoBill.new_bills_since(date_cutoff)
+        new_bills = MiamiDadeBill.new_bills_since(date_cutoff)
         recent_activity['new'] = new_bills
-        recent_activity['new_routine'] = [b for b in new_bills if 'Routine' in b.topics]
-        recent_activity['new_nonroutine'] = [b for b in new_bills if 'Non-Routine' in b.topics]
         
-        updated_bills = ChicagoBill.updated_bills_since(date_cutoff)
-        recent_activity['updated_routine'] = [b for b in updated_bills if 'Routine' in b.topics]
-        recent_activity['updated_nonroutine'] = [b for b in updated_bills if 'Non-Routine' in b.topics]
+        updated_bills = MiamiDadeBill.updated_bills_since(date_cutoff)
 
         # getting topic counts for meeting bills
         topic_hierarchy = settings.TOPIC_HIERARCHY
+
         topic_tag_counts = {}
         for b in meeting_bills:
             for topic in b.topics:
@@ -50,6 +42,7 @@ class ChicagoIndexView(IndexView):
                     topic_tag_counts[topic] += 1
                 except KeyError:
                     topic_tag_counts[topic] = 1
+
         # put together data blob for topic hierarchy
         for parent_blob in topic_hierarchy:
             parent_blob['count'] = 0
@@ -75,11 +68,11 @@ class ChicagoIndexView(IndexView):
             'seo': seo,
         }
 
-class ChicagoAboutView(AboutView):
-    template_name = 'chicago/about.html'
+class MiamiDadeAboutView(AboutView):
+    template_name = 'miamidade/about.html'
 
-class ChicagoBillDetailView(BillDetailView):
-    model = ChicagoBill
+class MiamiDadeBillDetailView(BillDetailView):
+    model = MiamiDadeBill
 
     def get_object(self, queryset=None):
         """
@@ -110,7 +103,7 @@ class ChicagoBillDetailView(BillDetailView):
 
         return obj
 
-class ChicagoCouncilMembersView(CouncilMembersView):
+class MiamiDadeCouncilMembersView(CouncilMembersView):
 
     def get_seo_blob(self):
         seo = {}
