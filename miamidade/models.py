@@ -1,28 +1,30 @@
 from django.conf import settings
-from django.db import models
 from councilmatic_core.models import Bill, Event
 from datetime import datetime
 import pytz
-from .helpers import topic_classifier, subj_classifier
-import re
-from urllib.parse import quote
+from .helpers import subj_classifier
 
 app_timezone = pytz.timezone(settings.TIME_ZONE)
 
-class ChicagoBill(Bill):
+class MiamiDadeBill(Bill):
 
     class Meta:
         proxy = True
 
+    # makes a friendly name using bill type & number, e.g. 'Introduction 643-2015'
+    # this is what is used as the title (heading) for bills throughout the site (bill listing, bill detail)
     @property
     def friendly_name(self):
         nums = self.identifier.split(' ')[-1]
         return self.bill_type.title() + ' ' + nums
 
+    # the date that a bill was passed, if it has been passed
     @property
     def date_passed(self):
         return self.actions.filter(classification='passage').order_by('-order').first().date if self.actions.all() else None
 
+    # whether or not a bill has reached its final 'completed' status
+    # what the final status is depends on bill type
     def _terminal_status(self, history, bill_type):
         if history:
             if bill_type.lower() == 'ordinance':
@@ -38,20 +40,28 @@ class ChicagoBill(Bill):
 
         return False
 
+    # this is b/c we don't have data on bills voted against, only bills passed -
+    # everything else is just left to die silently ¯\_(ツ)_/¯
+    # turns out that ~80% of nyc bills that get passed, are passed within
+    # 2 months of the last action
+    # using 6 months instead of 2 months for cutoff, to minimize incorrectly labeling
+    # in-progress legislation as stale
     def _is_stale(self, last_action_date):
-    # stale = no action for 5 months
         if last_action_date:
             timediff = datetime.now().replace(tzinfo=app_timezone) - last_action_date
             return (timediff.days > 180)
         else:
             return True
 
+    # the 'current status' of a bill, inferred with some custom logic
+    # this is used in the colored label in bill listings
     @property
     def inferred_status(self):
         actions = self.actions.all().order_by('-order')
         classification_hist = [a.classification for a in actions]
         last_action_date = actions[0].date if actions else None
         bill_type = self.bill_type
+        print( self.classification )
 
         if bill_type.lower() in ['communication', 'oath of office']:
             return None
@@ -62,6 +72,9 @@ class ChicagoBill(Bill):
         else:
             return 'Active'
 
+    # this is used for the text description of a bill in bill listings
+    # the abstract is usually friendlier, so we want to use that whenever it's available,
+    # & have the description as a fallback
     @property
     def listing_description(self):
         if self.abstract:
@@ -69,61 +82,14 @@ class ChicagoBill(Bill):
         else:
             return self.description
 
+    # You know what, I think we do want tags like Chicago, but Miami-Dade
+    # doesn't really need to have that "Routine" / "Non-routine" stuff.
     @property
     def topics(self):
-        # tags = topic_classifier(self.description)
-        tags = subj_classifier(self.subject)
-        if 'Routine' in tags:
-            tags.remove('Routine')
-            tags = ['Routine'] + tags
-        elif 'Non-Routine' in tags:
-            tags.remove('Non-Routine')
-            tags = ['Non-Routine'] + tags
-        return tags
+        return subj_classifier(self.subject)
 
-    @property
-    def addresses(self):
-        """
-        returns a list of relevant addresses for a bill
 
-        override this in custom subclass
-        """
-        if 'Ward Matters' in self.topics or 'City Matters' in self.topics:
-            stname_pattern = "(\S*[a-z]\S*\s){1,4}?"
-            sttype_pattern = "(ave|blvd|cres|ct|dr|hwy|ln|pkwy|pl|plz|rd|row|sq|st|ter|way)"
-            st_pattern = stname_pattern + sttype_pattern
-
-            addr_pattern = "(\d(\d|-)*\s%s)" %st_pattern
-            intersec_pattern = exp = "((?<=\sat\s)%s\s?and\s?%s)" %(st_pattern, st_pattern)
-
-            pattern = "(%s|%s)" %(addr_pattern, intersec_pattern)
-
-            matches = re.findall(pattern, self.description, re.IGNORECASE)
-
-            addresses = [m[0] for m in matches]
-            return addresses
-
-        return []
-
-    @property
-    def full_text_doc_url(self):
-        """
-        override this if instead of having full text as string stored in
-        full_text, it is a PDF document that you can embed on the page
-        """
-        base_url = 'https://pic.datamade.us/chicago/document/'
-        # base_url = 'http://127.0.0.1:5000/chicago/document/'
-        
-        if self.documents.filter(document_type='V').all():
-            legistar_doc_url = self.documents.filter(document_type='V').first().document.url
-            doc_url = '{0}?filename={2}&document_url={1}'.format(base_url, 
-                                                                 legistar_doc_url, 
-                                                                 self.identifier)
-            return doc_url
-        else:
-            return None
-
-class ChicagoEvent(Event):
+class MiamiDadeEvent(Event):
 
     class Meta:
         proxy = True

@@ -1,21 +1,21 @@
 from councilmatic_core.haystack_indexes import BillIndex
 from haystack import indexes
-from chicago.models import ChicagoBill
+from miamidade.models import MiamiDadeBill
 from datetime import datetime
 from django.conf import settings
 import pytz
 
 app_timezone = pytz.timezone(settings.TIME_ZONE)
 
-class ChicagoBillIndex(BillIndex, indexes.Indexable):
+class MiamiDadeBillIndex(BillIndex, indexes.Indexable):
 
     topics = indexes.MultiValueField(faceted=True)
 
     def get_model(self):
-        return ChicagoBill
+        return MiamiDadeBill
 
     def prepare(self, obj):
-        data = super(ChicagoBillIndex, self).prepare(obj)
+        data = super(MiamiDadeBillIndex, self).prepare(obj)
         
         boost = 0
         if obj.last_action_date:
