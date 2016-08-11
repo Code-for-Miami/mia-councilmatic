@@ -15,7 +15,7 @@ CITY_COUNCIL_MEETING_NAME = 'Miami-Dade Board of County Commissioners'
 # When running locally 
 # python -m SimpleHTTPServer 8001
 # in my ~/Sites/scrapers-us-municipal/_data/miamidade
-OCDAPI_BASE_URL = 'http://localhost:8001'
+# OCDAPI_BASE_URL = 'http://localhost:8001'
 
 # VOCAB SETTINGS FOR FRONT-END DISPLAY
 CITY_VOCAB = {
@@ -106,60 +106,11 @@ COMMITTEE_MEMBER_TITLE = 'Member'
 # describing legislation types on the about page template
 LEGISLATION_TYPE_DESCRIPTIONS = [
     {
-        'name': 'Ordinance',
-        'search_term': 'Ordinance',
-        'fa_icon': 'file-text-o',
-        'html_desc': True,
-        'desc': 'Ordinances are proposed changes to Miami-Dade’s local laws.',
-
-    },
-    {
-        'name': 'Claim',
-        'search_term': 'Claim',
-        'fa_icon': 'dollar',
-        'html_desc': True,
-        'desc': "If you are harmed by the City of Chicago, you can make a claim against the City for your costs. Minor harms, like personal injury or automotive damage, are settled through City Council as Claims. If you sue the City for harm and come to a settlement, the settlement must also be approved by the Council.",
-
-    },
-    {
-        'name': 'Resolution',
-        'search_term': 'Resolution',
-        'fa_icon': 'commenting-o',
-        'html_desc': True,
-        'desc': "Resolutions are typically symbolic, non-binding documents used for calling someone or some organization to take an action, statements announcing the Commission's intentions or honoring an individual.",
-
-    },
-    {
-        'name': 'Appointment',
-        'search_term': 'Appointment',
+        'name': '',
+        'search_term': '',
         'fa_icon': 'user',
         'html_desc': True,
-        'desc': "Used for appointing individuals to positions within various official City of Chicago and intergovernmental boards.",
-
-    },
-    {
-        'name': 'Report',
-        'search_term': 'Report',
-        'fa_icon': 'file-text-o',
-        'html_desc': True,
-        'desc': "Submissions of official reports by departments, boards and sister agencies. ",
-
-    },
-    {
-        'name': 'Communication',
-        'search_term': 'Communication',
-        'fa_icon': 'bullhorn',
-        'html_desc': True,
-        'desc': "Similar to reports and used for notifying City Council of intentions or actions.",
-
-    },
-    {
-        'name': 'Oath Of Office',
-        'search_term': 'Oath Of Office',
-        'fa_icon': 'user',
-        'html_desc': True,
-        'desc': "Official swearing in of individuals to leadership positions at the City of Chicago, including Aldermen and board members.",
-
+        'desc': "",
     },
 ]
 
@@ -196,145 +147,29 @@ ABOUT_BLURBS = {
 }
 
 MANUAL_HEADSHOTS = {
-    # 'moreno-proco-joe':     {'source': '', 'image': 'manual-headshots/moreno-proco-joe.jpg' },
-    # 'waguespack-scott':     {'source': '', 'image': 'manual-headshots/waguespack-scott.jpg' },
     'barbara-jordan':   {'source': '', 'image': 'manual-headshots/commissioner-jordan-hi-res.jpg' },
     'jean-monestime':   {'source': '', 'image': 'manual-headshots/monestime_BIG.jpg' },
     'audrey-edmonson':  {'source': '', 'image': 'manual-headshots/Edmonson_hi-res.jpg' },
     'bruno-a-barreiro': {'source': '', 'image': 'manual-headshots/bruno-photo-hires.jpg' },
     'sally-a-heyman':   {'source': '', 'image': 'manual-headshots/Heyman.jpeg' },    
-    'javier-d-souto': {'source': '', 'image': 'manual-headshots/SENATORJAVIER-SOUTO.jpg' },
-    'esteban-bovo-jr': {'source': '', 'image': 'manual-headshots/bovo.jpg' },
+    'javier-d-souto':   {'source': '', 'image': 'manual-headshots/SENATORJAVIER-SOUTO.jpg' },
+    'esteban-bovo-jr':  {'source': '', 'image': 'manual-headshots/bovo.jpg' },
     'daniella-levine-cava': {'source': '', 'image': 'manual-headshots/cava_headshot.jpg' },
     'rebeca-sosa':      {'source': '', 'image': 'manual-headshots/commissioner-rebeca-sosa-hi-res.jpg' },
-    'juan-c-zapata': {'source': '', 'image': 'manual-headshots/zapata.jpg' },
-    'dennis-c-moss': {'source': '', 'image': 'manual-headshots/IMG_Dennis_Moss_mug.jpg' },
-    'xavier-l-suarez': {'source': '', 'image': 'manual-headshots/xavier-suarez.jpg' },
-    'jose-pepe-diaz': {'source': '', 'image': 'manual-headshots/jose-pepe-diaz.jpg' },
+    'juan-c-zapata':    {'source': '', 'image': 'manual-headshots/zapata.jpg' },
+    'dennis-c-moss':    {'source': '', 'image': 'manual-headshots/IMG_Dennis_Moss_mug.jpg' },
+    'xavier-l-suarez':  {'source': '', 'image': 'manual-headshots/xavier-suarez.jpg' },
+    'jose-pepe-diaz':   {'source': '', 'image': 'manual-headshots/jose-pepe-diaz.jpg' },
 }
 
 
 # notable positions that aren't district representatives, e.g. mayor & city clerk
 # keys should match person slugs
 EXTRA_TITLES = {
-    'mendoza-susana-a': 'City Clerk',
-    'emanuel-rahm': 'Mayor',
+    'pedro-j-garcia': 'Property Appraiser',
+    'carlos-a-gimenez-mayor': 'Mayor',
+    'harvey-ruvin': 'Clerk, Circuit and County Courts'
 }
 
 
-TOPIC_HIERARCHY = [
-    {
-        'name': 'Citywide matters',
-        'children': [
-            {
-                'name': 'Municipal Code',
-                'children': [],
-            },
-            {
-                'name': 'City businesses',
-                'children': [   {'name': 'Getting and Giving Land'},
-                                {'name': 'Intergovernmental Agreement'},
-                                {'name': 'Lease Agreement'},
-                                {'name': 'Vacation of Public Street'},],
-            },
-            {
-                'name': 'Finances',
-                'children': [ {'name': 'Bonds'} ],
-            },
-            {
-                'name': 'Appointment',
-                'children': [],
-            },
-            {
-                'name': 'Oath of Office',
-                'children': [],
-            },
-            {
-                'name': 'Airports',
-                'children': [],
-            },
-            {
-                'name': 'Special Funds',
-                'children': [   {'name': 'Open Space Impact Funds'} ],
-            },
-            {
-                'name': 'Inspector General',
-                'children': [],
-            },
-            {
-                'name': 'Council Matters',
-                'children': [   {'name': 'Call for Action'},
-                                {'name': 'Transfer of Committee Funds'},
-                                {'name': 'Correction of City Council Journal'},
-                                {'name': 'Next Meeting'},],
-            },
-        ]
-
-    },
-    {
-        'name': 'Ward matters',
-        'children': [
-            {
-                'name': 'Business Permits and Privileges',
-                'children': [   {'name': 'Grant of privilege in public way'},
-                                {'name': 'Awnings'},
-                                {'name': 'Sign permits'},
-                                {'name': 'Physical barrier exemption'},
-                                {'name': 'Canopy'}],
-            },
-            {
-                'name': 'Residents',
-                'children': [   {'name': 'Handicapped Parking Permit'},
-                                {'name': 'Residential permit parking'},
-                                {'name': 'Condo Refuse Claim'},
-                                {'name': 'Senior citizen sewer refund'},],
-            },
-            {
-                'name': 'Land Use',
-                'children': [   {'name': 'Zoning Reclassification'},
-                                {'name': 'Liquor and Package Store Restrictions'},],
-            },
-            {
-                'name': 'Parking',
-                'children': [   {'name': 'Loading/Standing/Tow Zone'},
-                                {'name': 'Parking Restriction'},],
-            },
-            {
-                'name': 'Economic Development',
-                'children': [   {'name': 'Special Service Area'},
-                                {'name': 'Tax Incentives'},
-                                {'name': 'Tax Increment Financing'},],
-            },
-            {
-                'name': 'Traffic',
-                'children': [   {'name': 'Traffic signs and signals'},
-                                {'name': 'Vehicle Weight Limitation'},],
-            },
-            {
-                'name': 'Churches and Non-Profits',
-                'children': [   {'name': 'Tag Day Permits'} ],
-            },
-            {
-                'name': 'Redevelopment Agreement',
-                'children': [],
-            },
-        ],
-    },
-    {
-        'name': 'Individual matters',
-        'children': [
-            {
-                'name': 'Small Claims',
-                'children': [   {'name': 'Damage to vehicle claim'},
-                                {'name': 'Damage to property claim'},
-                                {'name': 'Settlement of Claims'},
-                                {'name': 'Excessive water rate claim'},],
-            },
-            {
-                'name': 'Honorifics',
-                'children': [   {'name': 'Honorific Resolution'},
-                                {'name': 'Honorary street'},],
-            },
-        ],
-    }
-]
+TOPIC_HIERARCHY = []
