@@ -34,14 +34,7 @@ class MiamiDadeIndexView(IndexView):
 
         # getting topic counts for meeting bills
         topic_hierarchy = settings.TOPIC_HIERARCHY
-
         topic_tag_counts = {}
-        for b in meeting_bills:
-            for topic in b.topics:
-                try:
-                    topic_tag_counts[topic] += 1
-                except KeyError:
-                    topic_tag_counts[topic] = 1
 
         # put together data blob for topic hierarchy
         for parent_blob in topic_hierarchy:
