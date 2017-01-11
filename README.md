@@ -1,7 +1,9 @@
-[![Stories in Ready](https://badge.waffle.io/Code-for-Miami/miami-dade-councilmatic.png?label=ready&title=Ready)](https://waffle.io/Code-for-Miami/miami-dade-councilmatic)
+![Current status: inactive](https://img.shields.io/badge/status-inactive-lightgrey.svg) [![Stories in Ready](https://badge.waffle.io/Code-for-Miami/miami-dade-councilmatic.png?label=ready&title=Ready)](https://waffle.io/Code-for-Miami/miami-dade-councilmatic)
 # Miami-Dade Councilmatic
 
 Keep track of what Miami-Dade County Council is doing.
+
+Note: this project may have a URL but it is currently inactivate without a regular maintainer. If you are interested in continuing development, feel free to submit pull requests and/or contact a Code for Miami tech team member for additional information.
 
 ## Setup
 
