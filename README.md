@@ -3,7 +3,7 @@
 
 Keep track of what Miami-Dade County Council is doing.
 
-Note: this project may have a URL but it is currently inactivate without a regular maintainer. If you are interested in continuing development, feel free to submit pull requests and/or contact a Code for Miami tech team member for additional information.
+:red_circle: **Note: this project has a URL in a staging environment, but has no regular maintainer. If you are interested in continuing development, feel free to submit pull requests and/or contact a Code for Miami tech team member for additional information.**
 
 ## Setup
 
